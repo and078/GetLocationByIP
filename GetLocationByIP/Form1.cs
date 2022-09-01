@@ -54,19 +54,6 @@ namespace GetLocationByIP
 
             string[] nums = textBox1.Text.Split('.');
 
-            //if (nums.Length > 4 && Array.Exists<string>(nums, num => num == ""))
-            //{
-            //    DeleteWrongChar();
-            //    MessageBox.Show("Numbers of ip address can`t be empty!");
-            //}
-            //for (int i = 0; i < nums.Length; i++)
-            //{
-            //    if (nums[i] == "")
-            //    {
-            //        DeleteWrongChar();
-            //        MessageBox.Show("Numbers of ip address can`t be empty!");
-            //    }
-            //}
 
             if (nums.Length > 4)
             {
@@ -103,11 +90,9 @@ namespace GetLocationByIP
                 int timeout = 1000;
                 PingOptions pingOptions = new PingOptions();
                 PingReply reply = myPing.Send(host, timeout, buffer, pingOptions);
-                //return (reply.Status == IPStatus.Success);
             }
             catch (Exception)
             {
-                //return false;
                 MessageBox.Show("Internet connection needed!");
                 Form1_Load(this, EventArgs.Empty);
             }
